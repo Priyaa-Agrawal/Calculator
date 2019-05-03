@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<marquee behavior="alternate"><h2>"My Calculator"</h2></marquee>
+<center>
+<input type = "Number" id = "demo1">enter the first number
+<br>
+<input type = "Number" id = "demo2">enter the second number
+<br>
+<button type="button" onclick="Add()" >Addition..!!</button>
+<br>
+<button type="button" onclick="Sub()" >Substraction..!!</button>	
+<br>
+<button type="button" onclick="Mul()" >Multiplication..!!</button>	
+<br>
+<button type="button" onclick="Div()" >Division..!!</button>	
+</center>
+<p id="add"></p>
+<p id="sub"></p>
+<p id="mul"></p>
+<p id="div"></p>
+
+<script>	
+	function Add(){
+		var x,y,sum;
+		x = Number(document.getElementById("demo1").value);
+		y = Number(document.getElementById("demo2").value);
+		sum = x + y;	
+		alert(sum);	
+		document.getElementById("add").innerHTML = "Sum of given Numbers:-   " + sum;
+	}
+
+	function Sub(){
+		var x,y,sub;
+		x = Number(document.getElementById("demo1").value);
+		y = Number(document.getElementById("demo2").value);
+		sub = x - y;	
+		alert(sub);	
+		document.getElementById("sub").innerHTML = "Substraction of given Numbers:-   " + sub;
+	}
+
+	function Mul(){
+		var x,y,mul;
+		x = Number(document.getElementById("demo1").value);
+		y = Number(document.getElementById("demo2").value);
+		mul = x * y;	
+		alert(mul);	
+		document.getElementById("mul").innerHTML = "Product of given Numbers:-   " + mul;
+	}
+
+	function Div(){
+		var x,y,div;
+		x = Number(document.getElementById("demo1").value);
+		y = Number(document.getElementById("demo2").value);
+		div = x / y;	
+		alert(div);	
+		document.getElementById("div").innerHTML = "Division of given Numbers:-   " + div;
+	}
+</script>
+</body>
+</html>
