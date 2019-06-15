@@ -12,15 +12,18 @@
 <br>
 <input type = "Number" id = "demo2">enter the second number
 <br>
-<button type="button" onclick="Add()" >Addition..!!</button>
+<button type="button" onclick="cleanbox()" >Clean..</button>
+<button type="button" onclick="from()" >From</button>
+<button type="button" onclick="to()" >To</button>
 <br>
-<button type="button" onclick="Sub()" >Substraction..!!</button>	
+<button type="button" onclick="Add()" >Addition !!</button>
 <br>
-<button type="button" onclick="Mul()" >Multiplication..!!</button>	
+<button type="button" onclick="Sub()" >Substraction !!</button>	
 <br>
-<button type="button" onclick="Div()" >Division..!!</button>	
+<button type="button" onclick="Mul()" >Multiplication !!</button>	
+<br>
+<button type="button" onclick="Div()" >Division !!</button>	
 
-<p id="display"></p>
 <p id="add"></p>
 <p id="sub"></p>
 <p id="mul"></p>
@@ -30,10 +33,32 @@
 	var x = new Array();
 	var y = new Array();
 	var i = 0;
+	var r = 0;
 
-	function clean(elementID)
-	{
+	function clean(elementID){
     	document.getElementById(elementID).innerHTML = "";
+	}
+
+	function cleanbox(){
+		document.getElementById('demo1').value = '';  
+		document.getElementById('demo2').value = '';
+
+	}
+
+	function from(){
+		if(r==0)
+			alert("Ateast Perform An Operation !");
+		else
+			document.getElementById('demo1').value = r;
+
+	}
+
+	function to(){
+		if(r==0)
+			alert("Ateast Perform An Operation !");
+		else
+			document.getElementById('demo2').value = r;
+
 	}
 
 	function Add(){
@@ -49,15 +74,11 @@
 			alert("Please enter the numbers: ");
 		}
 		else{
-		sum = x[i] + y[i];	
-		alert(sum);
-		document.getElementById("add").innerHTML = "Sum of given Numbers:-   " + sum;
-		
+		sum = x[i] + y[i];
+		r = sum;	
+		document.getElementById("add").innerHTML = "Sum of given Numbers:-   " + sum;		
 		}
-		i++;	
-		document.getElementById('demo1').value = '';  
-		document.getElementById('demo2').value = '';
-		     
+		i++;			     
 	}
 
 	function Sub(){
@@ -73,14 +94,11 @@
 			alert("Please enter the numbers: ");
 		}
 		else{
-		sub = x[i] - y[i];	
-		alert(sub);	
+		sub = x[i] - y[i];
+		r = sub;		
 		document.getElementById("sub").innerHTML = "Substraction of given Numbers:-   " + sub;
 		}
-		i++;	
-		document.getElementById('demo1').value = '';  
-		document.getElementById('demo2').value = ''; 
-		
+		i++;			
 }
 
 	function Mul(){
@@ -95,14 +113,11 @@
 			alert("Please enter the numbers: ");
 		}
 		else{
-			mul = x[i] * y[i];	
-		alert(mul);	
+		mul = x[i] * y[i];
+		r = mul;	
 		document.getElementById("mul").innerHTML = "Product of given Numbers:-   " + mul;
 	}
-	i++;	
-		document.getElementById('demo1').value = '';  
-		document.getElementById('demo2').value = '';   
-
+	i++;
 }
 
 	function Div(){
@@ -117,14 +132,11 @@
 			alert("Please enter the numbers: ");
 		}
 		else{
-		div = x[i] / y[i];	
-		alert(div);	
+		div = x[i] / y[i];
+		r = div;		
 		document.getElementById("div").innerHTML = "Division of given Numbers:-   " + div;
 	}
 	i++;	
-		document.getElementById('demo1').value = '';  
-		document.getElementById('demo2').value = '';
-
 }
 </script>
 </center>
