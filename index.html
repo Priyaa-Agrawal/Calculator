@@ -33,7 +33,7 @@
 	var x = new Array();
 	var y = new Array();
 	var i = 0;
-	var r = 0;
+	var r;
 
 	function clean(elementID){
     	document.getElementById(elementID).innerHTML = "";
@@ -46,18 +46,22 @@
 	}
 
 	function from(){
-		if(r==0)
+		if(r==undefined)
 			alert("Ateast Perform An Operation !");
-		else
+		else{
 			document.getElementById('demo1').value = r;
+			document.getElementById('demo2').value = '';
+		}
 
 	}
 
 	function to(){
-		if(r==0)
+		if(r==undefined)
 			alert("Ateast Perform An Operation !");
-		else
+		else{
+			document.getElementById('demo1').value = ''; 
 			document.getElementById('demo2').value = r;
+		}
 
 	}
 
@@ -70,7 +74,7 @@
 		var sum;
 		x[i] = Number(document.getElementById("demo1").value);
 		y[i] = Number(document.getElementById("demo2").value);
-		if (x[i]==0 && y[i]==0){
+		if (x[i]=='' || y[i]==''){
 			alert("Please enter the numbers: ");
 		}
 		else{
@@ -90,7 +94,7 @@
 		var sub;
 		x[i] = Number(document.getElementById("demo1").value);
 		y[i] = Number(document.getElementById("demo2").value);
-		if (x[i]==0 && y[i]==0){
+		if (x[i]=="" || y[i]==""){
 			alert("Please enter the numbers: ");
 		}
 		else{
@@ -109,7 +113,7 @@
 		var mul;
 		x[i] = Number(document.getElementById("demo1").value);
 		y[i] = Number(document.getElementById("demo2").value);
-		if (x[i]==0 && y[i]==0){
+		if (x[i]=="" || y[i]==""){
 			alert("Please enter the numbers: ");
 		}
 		else{
@@ -128,7 +132,7 @@
 		var div;
 		x[i] = Number(document.getElementById("demo1").value);
 		y[i] = Number(document.getElementById("demo2").value);
-		if (x[i]==0 && y[i]==0){
+		if (x[i]=="" || y[i]==""){
 			alert("Please enter the numbers: ");
 		}
 		else{
