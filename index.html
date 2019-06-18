@@ -25,26 +25,20 @@
 <button type="button" onclick="Div()" >Division !!</button>	
 
 <p id="add"></p>
-<p id="sub"></p>
-<p id="mul"></p>
-<p id="div"></p>
 
 <script>	
-	var x = new Array();
-	var y = new Array();
-	var i = 0;
+	var x ;
+	var y ;
 	var r;
-
-	function clean(elementID){
-    	document.getElementById(elementID).innerHTML = "";
+	function check(){
+		x= document.getElementById("demo1").value;
+		y= document.getElementById("demo2").value;
+		return ((x=='' || y=='')?true:false);
 	}
-
 	function cleanbox(){
 		document.getElementById('demo1').value = '';  
 		document.getElementById('demo2').value = '';
-
 	}
-
 	function from(){
 		if(r==undefined)
 			alert("Ateast Perform An Operation !");
@@ -52,9 +46,7 @@
 			document.getElementById('demo1').value = r;
 			document.getElementById('demo2').value = '';
 		}
-
 	}
-
 	function to(){
 		if(r==undefined)
 			alert("Ateast Perform An Operation !");
@@ -62,85 +54,52 @@
 			document.getElementById('demo1').value = ''; 
 			document.getElementById('demo2').value = r;
 		}
-
 	}
-
-	function Add(){
-		clean('add');
-		clean('sub');
-		clean('mul');
-		clean('div');   
- 
-		var sum;
-		x[i] = Number(document.getElementById("demo1").value);
-		y[i] = Number(document.getElementById("demo2").value);
-		if (x[i]=='' || y[i]==''){
+	function Add(){  
+ 		var sum;
+		if (check()){
 			alert("Please enter the numbers: ");
 		}
 		else{
-		sum = x[i] + y[i];
+			x=Number(x);
+			y=Number(y);
+		sum = x + y;
 		r = sum;	
 		document.getElementById("add").innerHTML = "Sum of given Numbers:-   " + sum;		
-		}
-		i++;			     
+		}			     
 	}
-
-	function Sub(){
-		clean('add');
-		clean('sub');
-		clean('mul');
-		clean('div');    
-		document.clear();	
+	function Sub(){		  
 		var sub;
-		x[i] = Number(document.getElementById("demo1").value);
-		y[i] = Number(document.getElementById("demo2").value);
-		if (x[i]=="" || y[i]==""){
+		if (check()){
 			alert("Please enter the numbers: ");
 		}
 		else{
-		sub = x[i] - y[i];
+		sub = x - y;
 		r = sub;		
-		document.getElementById("sub").innerHTML = "Substraction of given Numbers:-   " + sub;
-		}
-		i++;			
+		document.getElementById("add").innerHTML = "Substraction of given Numbers:-   " + sub;
+		}			
 }
-
-	function Mul(){
-		clean('add');
-		clean('sub');
-		clean('mul');
-		clean('div');   
+	function Mul(){   
 		var mul;
-		x[i] = Number(document.getElementById("demo1").value);
-		y[i] = Number(document.getElementById("demo2").value);
-		if (x[i]=="" || y[i]==""){
+		if (check()){
 			alert("Please enter the numbers: ");
 		}
 		else{
-		mul = x[i] * y[i];
+		mul = x * y;
 		r = mul;	
-		document.getElementById("mul").innerHTML = "Product of given Numbers:-   " + mul;
+		document.getElementById("add").innerHTML = "Product of given Numbers:-   " + mul;
 	}
-	i++;
 }
-
-	function Div(){
-		clean('add');
-		clean('sub');
-		clean('mul');
-		clean('div');     
+	function Div(){    
 		var div;
-		x[i] = Number(document.getElementById("demo1").value);
-		y[i] = Number(document.getElementById("demo2").value);
-		if (x[i]=="" || y[i]==""){
+		if (check()){
 			alert("Please enter the numbers: ");
 		}
 		else{
-		div = x[i] / y[i];
+		div = x / y;
 		r = div;		
-		document.getElementById("div").innerHTML = "Division of given Numbers:-   " + div;
-	}
-	i++;	
+		document.getElementById("add").innerHTML = "Division of given Numbers:-   " + div;
+	}	
 }
 </script>
 </center>
